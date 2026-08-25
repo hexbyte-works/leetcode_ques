@@ -5,13 +5,11 @@ public:
         for(int i=0;i<nums.size();i++){
             if(nums[i]==1)
             {
-                currentHigh+=1;
+                currentHigh++;
+                maxConsecutive=max(maxConsecutive,currentHigh);
             }
             else{
                 currentHigh=0;
-            }
-            if(currentHigh>maxConsecutive){
-                maxConsecutive=currentHigh;
             }
         }
         return maxConsecutive;
