@@ -1,13 +1,18 @@
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
-        map <int,int> mp;
+        int count=0, dominating=nums[0];
         for(int i =0; i<nums.size(); i++){
-            mp[nums[i]]+=1;
-            if(mp[nums[i]]>(nums.size()/2)){
-                return nums[i];
+            if(nums[i]==dominating){
+                count++;
+            }
+            else{
+                count--;
+            }
+            if(count==0){
+                dominating=nums[i+1];
             }
         }
-         return -1;
+        return dominating;
     }
 };
