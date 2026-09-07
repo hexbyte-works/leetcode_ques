@@ -2,7 +2,7 @@ class Solution {
 public:
     int subarraySum(vector<int>& nums, int k) {
         int count=0,total=0;
-        map <int,int> mp;
+        unordered_map <int,int> mp;
         for(int i : nums){
             total+=i;
             if(total==k){
